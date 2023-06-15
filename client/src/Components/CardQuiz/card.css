@@ -1,0 +1,46 @@
+
+
+.card{
+    width: 100%;
+    background-color: var(--bg-glass);
+    border: var(--border-glass);
+    backdrop-filter: 10px;
+}
+.card img{
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+}
+
+.card-content {
+    padding: 1rem;
+}
+.card-content h1{
+    color: var(--text-green);
+    
+}
+
+.card-content p{
+    color: white;
+}
+.card-content .btn-start{
+    padding: 0.5rem 3rem;
+    color: var(--text-green) ;
+    background: transparent;
+    border: 1px solid var(--text-green);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+}
+
+.card-content .btn-start:hover{
+    background: var(--text-green);
+    color: black;
+}
+
+.mb-2{
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,79 @@
+.header {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.header .nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-items a {
+  color: white;
+}
+
+.nav-items .active {
+  color: var(--text-green);
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-icons i {
+  width: 4rem;
+  height: 4rem;
+  color: var(--text-green);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3),
+    -1rem -1rem 2rem rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-icons i:hover{
+  background-color: var(--text-green);
+  color: black;
+}
+
+.name {
+  width: 12rem;
+  height: 3.5rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 2px solid var(--text-green);
+  color: white;
+  transition: 0.2s linear all;
+}
+
+.name:hover{
+  background-color: var(--text-green);
+  border: none;
+  color: black;
+}
