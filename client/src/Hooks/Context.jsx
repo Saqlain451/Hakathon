@@ -103,7 +103,6 @@ const AppProvider = ({ children }) => {
     setAllLoginData({ ...loginData, [name]: value });
   };
 
-  console.log(url);
 
   const loginClickhandler = (e) => {
     e.preventDefault();
@@ -114,6 +113,31 @@ const AppProvider = ({ children }) => {
       pass: "",
     });
   };
+
+  // * Start quizes part---->
+
+  const [allQues, setAllQues] = useState([]) // For getting all the quiz data 
+ 
+
+  const [isLoading, setisLoading] = useState(true);
+  const [isError, setisError] = useState(false)
+  //  create a function to fetch all get data
+
+  const getApidata =async (api,setData)=>{
+    setisLoading(true);
+    setisError(false)
+    try {
+      const data = await fetch(api)
+      const res = await data.json();
+      console.log(res.success);
+      res? setisLoading(false) : setisLoading(true);
+      res.success?
+      setData(res.success) : setisError(true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 
   return (
     <appContext.Provider
@@ -126,6 +150,11 @@ const AppProvider = ({ children }) => {
         loginData,
         loginChangeHandler,
         loginClickhandler,
+        getApidata,
+        allQues,
+        setAllQues,url,
+        isLoading,
+        isError,
       }}
     >
       {children}
