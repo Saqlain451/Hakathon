@@ -7,6 +7,7 @@ import Quizes from './Pages/Quizes/Quizes';
 import Register from './Pages/Register/Register';
 import Navbar from './Pages/Navbar/Navbar';
 import QuesAns from './Components/quiz/QuesAns';
+import CaseStudy from './Pages/CaseStudy/CaseStudy';
 
 const App = () => {
   return (
@@ -15,11 +16,12 @@ const App = () => {
        
         <Routes>
           <Route index element={<Project/>} />
-          <Route path='/projects' element={<Project/>}/>
+          {/* <Route path='/projects' element={<Project/>}/> */}
           <Route path='/quizes' element={<Quizes/>}/>
           <Route path='/quizes/quiz' element={<QuesAns/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/casestudy' element={<CaseStudy/>}/>
         </Routes>
       </BrowserRouter>
     </>

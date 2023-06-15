@@ -34,7 +34,7 @@ const Navbar = () => {
     <>
       <header className="header">
         <div className="navbar-logo">
-          <NavLink to={"/project"} href="">
+          <NavLink to={"/"} href="">
             <img src="" alt="" /> Logo
           </NavLink>
         </div>
@@ -42,7 +42,7 @@ const Navbar = () => {
           <ul className="nav-items">
             {userDetails && users.isAdmin && (
               <li>
-                <NavLink to={"/"}>Admin</NavLink>
+                <NavLink to={"/admin"}>Admin</NavLink>
               </li>
             )}
 
@@ -50,10 +50,10 @@ const Navbar = () => {
               <NavLink to={"/quizes"}>Quizes</NavLink>
             </li>
             <li>
-              <NavLink to={"/projects"}>Projects</NavLink>
+              <NavLink to={"/"}>Projects</NavLink>
             </li>
             <li>
-              <NavLink to={"/"}>Case studys</NavLink>
+              <NavLink to={"/casestudy"}>Case studys</NavLink>
             </li>
           </ul>
         </nav>

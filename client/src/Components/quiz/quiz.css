@@ -1,0 +1,79 @@
+.quiz{
+/* position: relative; */
+width: 100%;
+height: 100%;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.quiz-box{
+    width: 50%;
+    height: auto;
+    color: white;
+    margin-top: 2rem;
+    background-color: var(--bg-glass);
+    padding: 2rem;
+    text-transform: capitalize;
+    border: var(--border-glass);
+    backdrop-filter: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.opotion-all{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0 2rem 0rem;
+}
+
+.opotion-all p{
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: 10px;
+    font-size: 1.5rem;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.opotion-all .active{
+    background-color: var(--text-green);
+    color: black;
+}
+
+.quiz-box button{
+    width: 15rem;
+    background: var(--bg-glass);
+    border: 1.5px solid var(--text-green);
+    color: white;
+    margin: 2rem 0;
+}
+
+.quiz-box input{
+    width: 70%;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    height: 4rem;
+    padding:0 1rem;
+    backdrop-filter: 10px;
+    caret-color: var(--text-green);
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+    color: white;
+    border-radius: .5rem;
+}
+
+.quiz-box .btn-save{
+    display: block;
+    margin: 2rem auto;
+}
