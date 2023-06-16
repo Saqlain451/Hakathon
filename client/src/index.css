@@ -64,4 +64,6 @@ body{
   gap :2rem;
 }
 
-
+.text-green{
+  color: var(--text-green);
+}
