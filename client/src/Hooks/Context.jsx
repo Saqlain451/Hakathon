@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const appContext = React.createContext();
 
 const AppProvider = ({ children }) => {
@@ -9,7 +11,7 @@ const AppProvider = ({ children }) => {
   };
 
   //!todo create a function for doing the postapi fetch ----->
-
+  const [isLogIn, setIslogin] = useState(false);
   const postApiFetch = async (api, inputData) => {
     try {
       const datas = await fetch(api, {
@@ -22,13 +24,33 @@ const AppProvider = ({ children }) => {
       const res = await datas.json();
       //   console.log(res);
       if (res.msg) {
-        alert(res.msg);
+        toast.success(res.msg, {
+          position: "bottom-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
         if (res.userDetails) {
-          //   console.log(res.userDetails);
           const expirationTime = new Date().getTime() + (1* 24 * 60 * 60 * 1000);
           localStorage.setItem("user", JSON.stringify({...res.userDetails,expirationTime}));
+          setIslogin(true)
         }
-      } else alert(res.err);
+      } else{
+        toast.warn(res.err, {
+          position: "bottom-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+      };
     } catch (error) {
       console.log(error);
     }
@@ -98,6 +120,7 @@ const AppProvider = ({ children }) => {
     email: "",
     pass: "",
   });
+  
   const loginChangeHandler = (e) => {
     const { name, value } = e.target;
     setAllLoginData({ ...loginData, [name]: value });
@@ -112,6 +135,9 @@ const AppProvider = ({ children }) => {
       email: "",
       pass: "",
     });
+    if(localStorage.getItem("user")){
+      setIslogin(true);
+    }
   };
 
   // * Start quizes part---->
@@ -155,6 +181,8 @@ const AppProvider = ({ children }) => {
         setAllQues,url,
         isLoading,
         isError,
+        isLogIn,
+        postApiFetch,
       }}
     >
       {children}

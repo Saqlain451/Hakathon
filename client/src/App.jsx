@@ -8,6 +8,7 @@ import Register from './Pages/Register/Register';
 import Navbar from './Pages/Navbar/Navbar';
 import QuesAns from './Components/quiz/QuesAns';
 import CaseStudy from './Pages/CaseStudy/CaseStudy';
+import Admin from './Pages/Admin/Admin';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/quizes/:id' element={<QuesAns/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/admin' element={<Admin/>}/>
           <Route path='/casestudy' element={<CaseStudy/>}/>
         </Routes>
       </BrowserRouter>

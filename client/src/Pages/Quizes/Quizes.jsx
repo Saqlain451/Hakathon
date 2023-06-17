@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import CardQuiz from "../../Components/CardQuiz/CardQuiz";
 import { useGloblaHook } from "../../Hooks/Context";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../Components/Loader/Loader";
 const Quizes = () => {
   const { getApidata, allQues, setAllQues, url, isLoading, isError } =
     useGloblaHook();
@@ -21,7 +22,7 @@ const Quizes = () => {
       <Navbar />
 
       {isLoading ? (
-        <p>Loading...</p>
+        <Loader/>
       ) : isError ? (
         <p>No Quiz Found</p>
       ) : (

@@ -1,0 +1,72 @@
+
+
+.admin-btns button{
+    background:transparent;
+    border: 2px solid var(--text-green);
+    width: 14rem;
+    color: var(--text-green);
+    height: 4rem;
+    font-size: 1.5rem;
+    transition: all 0.3s linear;
+}
+
+.admin-btns .active-btns{
+    background-color: var(--text-green);
+    color: var(--bg-dark);
+    border: none;
+    font-size: 1.7rem;
+}
+
+.admin-content form{
+    width: 60%;
+    margin: auto;
+    padding: 2rem;
+    background: var(--bg-glass);
+    border: var(--border-glass);
+    backdrop-filter: 1rem;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.admin-content form input{
+    border: 1px solid var(--text-green);
+    margin-top: 0.7rem;
+    border-radius: 0.5rem;
+    height: 3.8rem;
+    padding: 0 1rem;
+}
+
+.admin-content form label{
+    display: block;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+}
+
+
+.admin-content form .quiz-ans{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.admin-content form select{
+    height: 3.7rem;
+    background-color: transparent;
+    color: white;
+    margin-top: 0.7rem;
+    border: 1px solid var(--text-green);
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+.admin-content form select>option{
+    background: transparent;
+    color: black;
+}
+
+.admin-content form .url{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 2rem;
+}
+

@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import "./login.css";
 import { useGloblaHook } from "../../Hooks/Context";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 const Login = () => {
-  const { loginData, loginChangeHandler,loginClickhandler } = useGloblaHook();
+  const { loginData, loginChangeHandler,loginClickhandler,isLogIn } = useGloblaHook();
+  const navigate = useNavigate();
+  setTimeout(()=>{
+    if(isLogIn){
+      navigate("/");
+    }
+  },[4000])
+  
+  useEffect(()=>{
+    if(localStorage.getItem("user")){
+      navigate("/");
+    }
+  },[])
   return (
     <>
       <div className="register ">
@@ -61,6 +75,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </>
   );
 };

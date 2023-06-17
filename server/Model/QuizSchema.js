@@ -8,7 +8,7 @@ const quizSchema =  new mongoose.Schema({
         type : String,
         required : true
     },
-    author : {
+    difficulty : {
         type : String,
         require : true
     },

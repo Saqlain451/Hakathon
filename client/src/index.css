@@ -67,3 +67,10 @@ body{
 .text-green{
   color: var(--text-green);
 }
+
+.p-5{
+  padding: 5rem 0rem;
+}
+.mt-2{
+  margin: 3rem 0;
+}

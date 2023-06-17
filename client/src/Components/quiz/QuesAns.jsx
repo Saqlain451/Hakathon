@@ -4,6 +4,7 @@ import "./quiz.css"
 import quizzesData from '../../Hooks/Data'
 import { useGloblaHook } from '../../Hooks/Context'
 import { useParams } from 'react-router-dom'
+import Loader from '../Loader/Loader'
 const QuesAns = () => {
     const { isLoading, isError, getApidata, url } = useGloblaHook()
 
@@ -36,8 +37,9 @@ const QuesAns = () => {
     return (
         <>
             <Navbar />
+
             <div className="quiz">
-                {isLoading ? <p>Loading...</p> : isError ? <p>No Question answer found</p>  : <>
+                {isLoading ? <Loader/> : isError ? <p>No Question answer found</p>  : <>
                     
                     <div className="quiz-box">
                     <h1 className='text-center text-green mb-2'>{title}</h1>

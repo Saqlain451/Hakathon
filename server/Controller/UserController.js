@@ -3,16 +3,16 @@ import bcrypt from 'bcryptjs'
 const createUser = async (req, res) => {
     const { name, email, pass, cpass } = req.body;
     if(!name || !email || !pass ||!cpass){
-        return res.status(400).json({ err: "These feild can not be empty" });
+        return res.status(500).json({ err: "These feild can not be empty" });
     }
     if (pass !== cpass) {
-      return res.status(400).json({ err: "Passwords don't match" });
+      return res.status(500).json({ err: "Passwords don't match" });
     }
   
     try {
       const existingUser = await user.findOne({ email });
       if (existingUser) {
-        return res.status(400).json({ err: 'Email already registered' });
+        return res.status(500).json({ err: 'Email already registered' });
       } 
   
       const hashedPassword = await bcrypt.hash(pass, 10);

@@ -7,6 +7,7 @@ import { Si1Password } from "react-icons/si";
 import { NavLink, useNavigate } from "react-router-dom";
 import Button from '../../Components/Button/Button';
 import { useGloblaHook } from '../../Hooks/Context';
+import { ToastContainer, toast } from 'react-toastify';
 const Register = () => {
   const {regData, regChangeHandler,regErr,regBtnClick} = useGloblaHook();
   return (
@@ -88,6 +89,8 @@ const Register = () => {
           </div>
         </div>
       </div>
+
+      <ToastContainer/>
    </>
   )
 }
