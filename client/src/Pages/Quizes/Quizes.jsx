@@ -24,7 +24,7 @@ const Quizes = () => {
     if(btnName == "all"){
       getApidata(`${url}/allquizdata`, setAllQues);
     }else{
-      getApiPostData(`${url}/difficulty`,{difficulty:btnName})
+      getApiPostData(`${url}/difficulty`,{difficulty:btnName},setAllQues)
     }
   }
 

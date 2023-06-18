@@ -75,5 +75,24 @@ height: 100%;
 
 .quiz-box .btn-save{
     display: block;
-    margin: 2rem auto;
+    margin: 2rem 0;
+}
+
+.question-all-marks{
+    width: 50%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,70%);
+}
+
+.all-result{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    color:whitesmoke;
+    text-transform: capitalize;
+}
+.all-result p{
+    border: 1.5px solid var(--text-green);
+    padding: 1rem;
 }

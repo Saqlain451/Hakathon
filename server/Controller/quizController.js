@@ -17,7 +17,7 @@ const createQuiz = async (req, res)=>{
 
 const allQuiz = async(req, res)=>{
     try {
-        const data = await quiz.find({});
+        const data = await quiz.find();
         data.length?
         res.status(201).json({success : data}) : res.status(501).json({err:"No Quiz Found"})
     } catch (error) {

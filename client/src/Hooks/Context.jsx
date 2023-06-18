@@ -166,7 +166,7 @@ const AppProvider = ({ children }) => {
 
   // * get post api Data ---------->
 
-  const getApiPostData =async (api,inpData)=>{
+  const getApiPostData =async (api,inpData,setData)=>{
     setRegErr(false);
     setisLoading(true)
     try {
@@ -180,7 +180,7 @@ const AppProvider = ({ children }) => {
       const res = await data.json();
       console.log(res);
       res? setisLoading(false) : setisLoading(true)
-      res.success? setAllQues(res.success) : setisError(true)
+      res.success? setData(res.success) : setisError(true)
     } catch (error) {
       console.log(error)
     }
@@ -205,7 +205,7 @@ const AppProvider = ({ children }) => {
         isError,
         isLogIn,
         postApiFetch,
-        getApiPostData
+        getApiPostData,
       }}
     >
       {children}
