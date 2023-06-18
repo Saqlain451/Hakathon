@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.css";
 import { useNavigate } from "react-router-dom";
-const CardQuiz = ({img,title,marks,quescount,path}) => {
+const CardQuiz = ({img,title,marks,quescount,path,difficulty}) => {
   const navigate = useNavigate();
   return (
     <>
@@ -16,7 +16,7 @@ const CardQuiz = ({img,title,marks,quescount,path}) => {
           <h1 className="mb-2">{title}</h1>
           <div className="d-flex mb-2 space-between">
             <p>Marks : {marks}</p>
-            <p>ques : {quescount}</p>
+            <p>Difficulty : {difficulty}</p>
           </div>
           <button className="btn-start" onClick={()=>{navigate(path)}}>Take test</button>
         </div>

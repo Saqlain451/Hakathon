@@ -36,6 +36,18 @@ const indiVidualQuizData = async(req, res)=>{
     } catch (error) {
         res.status(401).json({err:"No Quiz Found"})
     }
-} 
+}
 
-export{createQuiz,allQuiz,indiVidualQuizData}
+// identify quiz using difficulty
+const diffiCulty = async(req, res)=>{
+    const {difficulty} = req.body
+    try {
+        const getQuizDifficulty = await quiz.find({difficulty})
+        getQuizDifficulty.length?
+        res.status(201).json({success : getQuizDifficulty}) : res.status(501).json({err : "Data not Found"})
+    } catch (error) {
+        res.status(401).json({err:"No Data Found"})
+        console.log(error)  
+    }
+}
+export{createQuiz,allQuiz,indiVidualQuizData,diffiCulty}

@@ -164,6 +164,28 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  // * get post api Data ---------->
+
+  const getApiPostData =async (api,inpData)=>{
+    setRegErr(false);
+    setisLoading(true)
+    try {
+      const data = await fetch(api,{
+        method : "POST",
+        headers : {
+          "Content-Type" : "application/json"
+        },
+        body : JSON.stringify(inpData)
+      })
+      const res = await data.json();
+      console.log(res);
+      res? setisLoading(false) : setisLoading(true)
+      res.success? setAllQues(res.success) : setisError(true)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
   return (
     <appContext.Provider
@@ -183,6 +205,7 @@ const AppProvider = ({ children }) => {
         isError,
         isLogIn,
         postApiFetch,
+        getApiPostData
       }}
     >
       {children}
