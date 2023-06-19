@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.css";
 import { useNavigate } from "react-router-dom";
-const CardQuiz = ({img,title,marks,quescount,path,difficulty}) => {
+const CardQuiz = ({img,title,marks,path,difficulty}) => {
   const navigate = useNavigate();
   return (
     <>

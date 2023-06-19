@@ -5,7 +5,9 @@ import "./file.css";
 import axios from "axios";
 import Dropzone from "react-dropzone";
 import { useGloblaHook } from "../../Hooks/Context";
+import { useNavigate } from "react-router-dom";
 const Fileupload = () => {
+  const navigate = useNavigate();
   const {url} = useGloblaHook();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -16,7 +18,8 @@ const Fileupload = () => {
     setfilepath(acceptedFiles[0]);
   };
 
-  const handleFileUpload = () => {
+  const handleFileUpload = (e) => {
+    e.preventDefault();
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
@@ -27,6 +30,7 @@ const Fileupload = () => {
       .post(`${url}/upload`, formData)
       .then((res) => {
         console.log(res.data);
+        navigate("/projects");
       })
       .catch((err) => {
         console.error(err);

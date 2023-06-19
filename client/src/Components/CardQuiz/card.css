@@ -4,12 +4,14 @@
     width: 100%;
     background-color: var(--bg-glass);
     border: var(--border-glass);
-    backdrop-filter: 10px;
+   backdrop-filter: blur(10px);
+    text-transform: capitalize;
 }
 .card img{
     width: 100%;
     height: auto;
     padding: 0.5rem;
+    aspect-ratio: 1200/628;
 }
 
 .card-content {
@@ -31,9 +33,12 @@
     font-size: 1.5rem;
     text-transform: capitalize;
     cursor: pointer;
-    margin: auto;
+    margin:auto;
     display: block;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .card-content .btn-start:hover{

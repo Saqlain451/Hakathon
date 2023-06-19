@@ -9,6 +9,7 @@ import Navbar from './Pages/Navbar/Navbar';
 import QuesAns from './Components/quiz/QuesAns';
 import CaseStudy from './Pages/CaseStudy/CaseStudy';
 import Admin from './Pages/Admin/Admin';
+import AllProjects from './Components/AllProjects/AllProjects';
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/admin' element={<Admin/>}/>
           <Route path='/casestudy' element={<CaseStudy/>}/>
+          <Route path='/projects' element={<AllProjects/>}/>
+
         </Routes>
       </BrowserRouter>
     </>

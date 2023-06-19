@@ -22,6 +22,11 @@
   color: white;
 }
 
+.navbar-logo a img{
+  width: 80%;
+  height: auto;
+}
+
 .nav-items a {
   color: white;
 }

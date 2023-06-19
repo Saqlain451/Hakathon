@@ -23,6 +23,8 @@ const QuesAns = () => {
 
     const userDetails = JSON.parse(localStorage.getItem("user"));
     const email = userDetails.email
+    const userName = userDetails.name;
+    // console.log(userName)
     const btnNext = () => {
         console.log(ans);
         console.log(questionData[indexnum].correct)
@@ -38,7 +40,7 @@ const QuesAns = () => {
     }
 
     const saveHandler =()=>{
-        postApiFetch(`${url}/addNumber`,{name,title,email,difficulty,mark:correct,totalMarks:questionData.length})
+        postApiFetch(`${url}/addNumber`,{name:userName,title,email,difficulty,mark:correct,totalMarks:questionData.length})
     }
 
     const getResultHandler = ()=>{

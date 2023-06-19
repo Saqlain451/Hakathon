@@ -1,8 +1,9 @@
 import React from 'react'
+import Cart from '../../Components/PorjCard/ProjCard'
 
 const AdminProject = () => {
   return (
-    <div style={{"background" : "red"}}>AdminProject</div>
+   <Cart/>
   )
 }
 

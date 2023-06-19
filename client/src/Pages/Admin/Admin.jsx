@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import "./admin.css"
 import AdminProject from './AdminProject'
 import AdminQuiz from './AdminQuiz'
 import AdminCase from './AdminCase'
+import { useNavigate } from 'react-router-dom'
 const Admin = () => {
 
     const [btnState, setBtnState] = useState({
@@ -17,6 +18,14 @@ const Admin = () => {
         console.log(name);
         setBtnState({[name] : true})
     }
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(!localStorage.getItem("user")){
+      navigate("/login")
+    }
+  },[])
 
   return (
     <>

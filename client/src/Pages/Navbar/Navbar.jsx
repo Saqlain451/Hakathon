@@ -35,7 +35,7 @@ const Navbar = () => {
       <header className="header">
         <div className="navbar-logo">
           <NavLink to={"/"} href="">
-            <img src="" alt="" /> Logo
+            <img src="./assets/logo.png" alt="" />
           </NavLink>
         </div>
         <nav className="navbar">
@@ -45,13 +45,13 @@ const Navbar = () => {
                 <NavLink to={"/admin"}>Admin</NavLink>
               </li>
             )}
-
-            <li>
-              <NavLink to={"/quizes"}>Quizes</NavLink>
-            </li>
             <li>
               <NavLink to={"/"}>Projects</NavLink>
             </li>
+            <li>
+              <NavLink to={"/quizes"}>Quizes</NavLink>
+            </li>
+           
             <li>
               <NavLink to={"/casestudy"}>Case studys</NavLink>
             </li>
