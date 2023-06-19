@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useGloblaHook } from '../../Hooks/Context';
 const Cart = () => {
     const [projects, setProject] = useState([]);
-
+    const {url} = useGloblaHook();
     useEffect(() => {
       const fetchFiles = async () => {
         try {
-          const response = await axios.get('http://localhost:4000/files');
+          const response = await axios.get(`${url}/files`);
           // setProject(response.data);
           setProject(response.data.success);
         } catch (error) {
@@ -19,7 +20,7 @@ const Cart = () => {
   
     const handleDownload = async (id) => {
       try {
-        const response = await axios.get(`http://localhost:4000/files/${id}`, {
+        const response = await axios.get(`${url}/files/${id}`, {
           responseType: 'blob',
         });
   
